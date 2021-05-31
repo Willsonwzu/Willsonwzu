@@ -16,11 +16,11 @@ import random
 app = Flask(__name__)
 
 
-line_bot_api = LineBotApi('')
+line_bot_api = LineBotApi('oLalIAH7M4tTwbetfPt2UwVfyNLamAJKTwG6NLL2K37HsV5L5BtOx3xyMZGDaffHS2XCwoYJymL+p4oL52/iRUsFpQw0NtGKpNNiGxxP40WekJ7aH/Ay90ryponfpC90+ym7P4ObFdy9hv9xNN3RsAdB04t89/1O/w1cDnyilFU=')
 
-handler = WebhookHandler('')
+handler = WebhookHandler('a8dfac30fd5c47e4099d5111fafa2356')
 
-line_bot_api.push_message('', TextSendMessage(text='系統測試中，若您覺得訊息干擾到您，您可以將聊天室設為靜音，謝謝喔！'))
+line_bot_api.push_message('U1ea05c49e98560b8952a35d9fbede9b6', TextSendMessage(text='系統測試中，若您覺得訊息干擾到您，您可以將聊天室設為靜音，謝謝喔！'))
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -150,7 +150,7 @@ def handle_message(event):
         #user_message='文字訊息'
     elif user_message.find('文字訊息') != -1:         #判斷用戶使否傳來"文字訊息"關鍵字，若為是則觸發本區段。   
         
-        res_message = TextSendMessage(text='歡迎使用文藻E點通，您選擇的是文字測試訊息，您目前看到的是【文字訊息】的回覆方式。')        
+        res_message = TextSendMessage(text='歡迎使用willsonwzu，您選擇的是文字測試訊息，您目前看到的是【文字訊息】的回覆方式。')        
         line_bot_api.reply_message(event.reply_token,res_message)
         return 0   
         
